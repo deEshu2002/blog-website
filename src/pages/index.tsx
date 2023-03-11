@@ -4,6 +4,7 @@ import styles from "@/styles/Home.module.css";
 import Navbar from "@/Components/Navbar";
 import { PageDescription } from "@/Components/PageDescription";
 import SortMethods from "@/Components/SortMethods";
+import Bloglist from "@/Components/Bloglist";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,10 @@ export default function Home() {
       <main className={styles.main}>
         <Navbar />
         <PageDescription />
-        <SortMethods />
+        <section id="content" className={styles.center}>
+          <SortMethods />
+          <Bloglist />
+        </section>
       </main>
     </>
   );

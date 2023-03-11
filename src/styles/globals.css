@@ -94,6 +94,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    height: 100vh;
 }
 
 header{
@@ -221,6 +222,12 @@ header .container .overlay.active {
   color: rbg(var(--foreground-rgb));
 }
 
+#content{
+  margin-top: 8rem;
+  width: 100%; 
+  display: flex;
+  justify-content: space-between;
+}
 
 
 

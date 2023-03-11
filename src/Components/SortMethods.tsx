@@ -1,4 +1,4 @@
-import { isValidElement, useRef } from "react";
+import { useRef } from "react";
 
 const SortBy = ["Recents", "ByPaws", "News", "SmartWork", "NipOffers"];
 
