@@ -4,7 +4,7 @@ export default function Bloglist() {
   return (
     <div>
       {blogList.map((elem, idx) => {
-        return <div>{elem}</div>;
+        return <div key={idx}>{elem}</div>;
       })}
     </div>
   );

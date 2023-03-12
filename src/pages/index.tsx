@@ -5,6 +5,7 @@ import Navbar from "@/Components/Navbar";
 import { PageDescription } from "@/Components/PageDescription";
 import SortMethods from "@/Components/SortMethods";
 import Bloglist from "@/Components/Bloglist";
+import BlogCard from "@/Components/BlogCard";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +18,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <main className="main">
         <Navbar />
         <PageDescription />
         <section id="content" className={styles.center}>
-          <SortMethods />
-          <Bloglist />
+          {/* <SortMethods />
+          <Bloglist /> */}
+          <BlogCard />
         </section>
       </main>
     </>
