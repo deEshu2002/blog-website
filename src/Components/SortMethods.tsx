@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const SortBy = ["Recents", "ByPaws", "News", "SmartWork", "NipOffers"];
+const SortBy = ["NewNeow", "ByPaws", "News", "SmartWork", "NipOffers", "Memes"];
 
 export default function SortMethods() {
   const indicatorRef = useRef(null);

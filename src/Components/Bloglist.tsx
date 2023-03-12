@@ -1,10 +1,12 @@
+import BlogCard from "./BlogCard";
+
 const blogList = ["hellow", "this", "is", "list", "testing"];
 
 export default function Bloglist() {
   return (
-    <div>
+    <div id="blog-list">
       {blogList.map((elem, idx) => {
-        return <div key={idx}>{elem}</div>;
+        return <BlogCard/>;
       })}
     </div>
   );

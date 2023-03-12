@@ -1,11 +1,9 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import Navbar from "@/Components/Navbar";
 import { PageDescription } from "@/Components/PageDescription";
 import SortMethods from "@/Components/SortMethods";
 import Bloglist from "@/Components/Bloglist";
-import BlogCard from "@/Components/BlogCard";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,10 +19,9 @@ export default function Home() {
       <main className="main">
         <Navbar />
         <PageDescription />
-        <section id="content" className={styles.center}>
-          {/* <SortMethods />
-          <Bloglist /> */}
-          <BlogCard />
+        <section id="content" className="center">
+          <SortMethods />
+          <Bloglist />
         </section>
       </main>
     </>
