@@ -3,26 +3,26 @@ import { prisma } from "../db";
 import { procedure, router } from "../trpc";
 
 export const appRouter = router({
-    hello: procedure.input(z.object({text: z.string()})).query(async ({input}) => {
-
-        // const newBlog = await prisma.post.create({
-        //     data:{
-        //         author:"Tester",
-        //         authorId:3,
-        //         title:"Testers Test",
-        //         content:"hello hello this is the test paragraph that should be long enough to take all the space given to it so that i can test well this",
-        //         id:4,
-        //     }
-        // })
-
+    hello: procedure.input(z.object({text: z.string()})).query(({input}) => {
         return {
-            inserteddata:  "hellow",
+            inserteddata:  `hello ${input.text}`,
         };
     }),
+    
+    insertPost: procedure.input(z.object({title:z.string(), content:z.string(),author:z.string()})).query(async (input) => {
+        const newBlog = await prisma.post.create({
+            data:{
+                title: input.input.title,
+                content: input.input.content,
+                author: input.input.author,
+            }
+        })
+        return Promise.resolve(newBlog);
+    }),
 
-    getAll:procedure.query(async ({ ctx }) => {
-        const allData = await prisma.findOne({where:{id:1},select:{title:true}});
+    getAll:procedure.query(async ({ctx}) => {
+        const allData = await prisma.post.findMany();
         
-        return allData;
+        return Promise.resolve(allData);
     })
 })
