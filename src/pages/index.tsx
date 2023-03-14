@@ -10,7 +10,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   
-  const hello = trpc.getAll.useQuery();
 
   return (
     <>
@@ -23,7 +22,6 @@ export default function Home() {
       <main className="main">
         <Navbar />
         <PageDescription />
-        {hello.data ? `${hello.data}`:""}
         <section id="content" className="center">
           <SortMethods />
           <Bloglist />
