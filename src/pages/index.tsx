@@ -4,10 +4,14 @@ import Navbar from "@/Components/Navbar";
 import { PageDescription } from "@/Components/PageDescription";
 import SortMethods from "@/Components/SortMethods";
 import Bloglist from "@/Components/Bloglist";
+import { trpc } from "@/utils/trpc";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  
+  const hello = trpc.getAll.useQuery();
+
   return (
     <>
       <Head>
@@ -19,6 +23,7 @@ export default function Home() {
       <main className="main">
         <Navbar />
         <PageDescription />
+        {hello.data ? `${hello.data}`:""}
         <section id="content" className="center">
           <SortMethods />
           <Bloglist />
